@@ -1,7 +1,7 @@
 # TerraformWithAWSBootCamp
 This is terraform example
 
-## Terrafrom Command commands
+### Terrafrom Commands
 
 // This commands shows the terrafrom version
 
