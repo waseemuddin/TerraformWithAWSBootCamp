@@ -1,3 +1,12 @@
+mycustom_vpc_cidr_block = "10.0.0.0/16"
+mycustom_vpc_subnet1 = "10.0.10.0/24"
+env_prefix = "CVPC"
+avail_zone = "us-east-1a"
+my_ip = "39.60.167.254/32"
+instance_type = "t2.micro"
+public_key_location = "/home/waseem/.ssh/id_rsa.pub"
+
+//////////////////////////////// *************** /////////////////////////////////////////////////////////
 //subnet_cidr_block = ["192.168.1.128/25"]
 
 //cidr_blocks = ["192.168.1.0/24", "192.168.1.0/25"] //cidr block
@@ -16,10 +25,10 @@
 
 //cidr_blocks = ["192.168.1.0/24", "192.168.1.0/25"]
 
-cidr_blocks = [
-    {cidr_block = "192.168.1.0/24", name = "tesr-vpc"},
-    {cidr_block = "192.168.1.0/25", name = "test-subnet"}
-    ]
+//cidr_blocks = [
+   // {cidr_block = "192.168.1.0/24", name = "tesr-vpc"},
+  //  {cidr_block = "192.168.1.0/25", name = "test-subnet"}
+ //   ]
 
 
-environment = "CVPC environment"
+//environment = "CVPC environment"
