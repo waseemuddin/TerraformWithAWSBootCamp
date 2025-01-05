@@ -19,6 +19,92 @@ resource "aws_instance" "app_server" {
 
 //////////////////////////////////////// /// VPC and Subnet Class Example ///////////////////////////////////
 
+provider "aws" {
+    //region = "us-east-1"     for best practice use in  global credentials 
+    //access_key = ""  
+    //secret_key = ""
+}
+
+//variable "vpc_cidr_block" {
+ // description = "vpc cidr block"
+//}
+
+variable "cidr_blocks" {
+      description = "vpc and subnet cidr blocks"
+      //type = list(string)
+      type = list(object({
+      cidr_block = string
+      name = string
+
+      }))
+}
+
+//variable "environment" {
+ // description = "CVPC"
+//}
+
+resource "aws_vpc" "mynetwork_vpc" {
+        // cidr_block = "192.168.1.0/24"
+        //cidr_block = var.vpc_cidr_block
+        //cidr_block = var.cidr_blocks[0]
+          cidr_block = var.cidr_blocks[0].cidr_block
+    
+      tags = {
+        //Name: "CVPC"
+        //Name: var.environment
+          Name: var.cidr_blocks[0].name
+        //vpc_env: "mynetwork-vpc"
+      }
+}
+
+ // variable "subnet_cidr_block" {
+  //    description = "subnet cidr block 1"
+  //    default = "192.168.1.0/25"
+   //   type = string
+//}
+
+//variable avail_zone{}   // this is used and define for global environment varialble  "export TF_VAR_avail_zone=us-east-1c"
+
+resource "aws_subnet" "mynetwork_subnet-1" {
+
+        vpc_id = aws_vpc.mynetwork_vpc.id
+        //cidr_block = var.subnet_cidr_block
+        //cidr_block = "192.168.1.0/25"
+        //cidr_block = var.cidr_blocks[1]
+        cidr_block = var.cidr_blocks[1].cidr_block
+
+        availability_zone = "us-east-1b"
+        //  availability_zone = var.avail_zone
+        tags = {
+          //Name: "C-Subnet-1"
+          Name: var.cidr_blocks[1].name
+        }
+}
+
+data "aws_vpc" "existing_vpc" {
+    default = true
+}
+
+resource "aws_subnet" "existing_vpc_subnet-2" {
+      vpc_id = data.aws_vpc.existing_vpc.id
+      cidr_block = "172.31.96.0/20"
+      availability_zone = "us-east-1a"
+      tags = {
+        Name: "C-Subnet-2"
+      }
+}
+
+output "mynetwork_vpc-id"{
+    value = aws_vpc.mynetwork_vpc.id
+}
+
+output "mynetwork_subnet-id" {
+    value = aws_subnet.mynetwork_subnet-1.id
+}
+
+
+
+/*
 // AWS Provider Block
 provider "aws" {
     
@@ -49,9 +135,9 @@ variable "environment" {
 
 //AWS Resource Block for VPC
 resource "aws_vpc" "mynetwork_vpc" {
-   // cidr_block = var.vpc_cidr_block
+   //1 cidr_block = var.vpc_cidr_block
       cidr_block = var.cidr_blocks[0].cidr_block
-      //cidr_block = var.cidr_blocks[0]
+      //2 cidr_block = var.cidr_blocks[0]
   
   
     //  cidr_block = "192.168.1.0/24"
@@ -76,8 +162,8 @@ resource "aws_subnet" "mynetwork_subnet-1" {
    
     vpc_id = aws_vpc.mynetwork_vpc.id
       cidr_block = var.cidr_blocks[1].cidr_block
-    //cidr_block = var.cidr_blocks[1]
-    //cidr_block = var.subnet_cidr_block
+    //2cidr_block = var.cidr_blocks[1]
+    //1cidr_block = var.subnet_cidr_block
     //  cidr_block = "192.168.1.0/25"
     
     availability_zone = "us-east-1a"
@@ -122,3 +208,4 @@ output "mynetwork_subnet-id"{
     value = aws_subnet.mynetwork_subnet-1.id
 }
 
+*/
