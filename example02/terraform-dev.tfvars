@@ -1,8 +1,13 @@
-mycustom_vpc_cidr_block = "10.0.0.0/16"
-mycustom_vpc_subnet1 = "10.0.10.0/24"
+
+
+//mycustom-vpc = "10.0.0.0/16"
+mycustom_vpc = "10.0.0.0/16"
+//mycustom-subnet-1 = "10.0.10.0/24"
+mycustom_subnet = "10.0.10.0/24"
 env_prefix = "CVPC"
 avail_zone = "us-east-1a"
-my_ip = "my_ip"
+
+my_ip = "39.60.149.100/32"
 instance_type = "t2.micro"
 public_key_location = "/home/waseem/.ssh/id_rsa.pub"
 
