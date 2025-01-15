@@ -9,7 +9,7 @@ avail_zone = "us-east-1a"
 
 my_ip = "39.60.169.48/32"
 instance_type = "t2.micro"
-public_key_location = "/home/waseem/.ssh/id_rsa.pub"
+public_key_location = "/home/user/.ssh/id_rsa.pub"
 image_name = "amzn2-ami-hvm-*-x86_64-gp2"
 
 

@@ -1,0 +1,8 @@
+myapp-vpc = "10.0.0.0/16"
+mysubnet = "10.0.10.0/24"
+env_prefix = "CVPC"
+avail_zone = "us-east-1a"
+my_ip = "39.60.169.48/32"
+instance_type = "t2.micro"
+public_key_location = "/home/user/.ssh/id_rsa.pub"
+image_name = "amzn2-ami-hvm-*-x86_64-gp2"
