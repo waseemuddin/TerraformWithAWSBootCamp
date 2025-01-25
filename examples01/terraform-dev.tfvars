@@ -4,7 +4,7 @@ env_prefix = "CVPC"
 avail_zone = "us-east-1a"
 my_ip = "my_ip"
 instance_type = "t2.micro"
-public_key_location = "/home/waseem/.ssh/id_rsa.pub"
+public_key_location = "<pub_loc>"
 
 //////////////////////////////// *************** /////////////////////////////////////////////////////////
 //subnet_cidr_block = ["192.168.1.128/25"]

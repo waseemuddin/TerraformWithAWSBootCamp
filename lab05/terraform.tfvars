@@ -4,6 +4,6 @@
 # instance_type = "t2.micro"
 # env_prefix = "CVPC"
 # avail_zone = "us-east-1c"
-# my_ip =  "39.60.180.153/32"
+# my_ip =  "<my_ip>"
 # myinstance_type = "t2.micro"
 
