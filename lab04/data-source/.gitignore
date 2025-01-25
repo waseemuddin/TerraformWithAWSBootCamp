@@ -1,4 +1,4 @@
-# Local .terraform directories
+# Local .terraform directorie
 **/.terraform/*
 **/data-source/.terraform/*
 .terraform/
