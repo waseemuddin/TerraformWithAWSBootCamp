@@ -56,6 +56,7 @@ terraform-aws-efs-ec2/
 Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/terraform-aws-efs-ec2.git
-cd terraform-aws-efs-ec2
+git clone https://github.com/waseemuddin/TerraformWithAWSBootCamp.git
+cd TerraformWithAWSBootCamp
+git checkout feature/efs_lab01
 ```
