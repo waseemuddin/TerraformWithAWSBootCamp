@@ -3,7 +3,7 @@
 This repository contains Terraform modules to create an **Amazon EFS (Elastic File System)** and mount it on an **EC2 instance** in AWS. The infrastructure is designed using a **modular approach** for reusability and scalability.
 
 ---
-![efs img-01](images/efsarch.png)
+![efs img-01](../images/efsarch.png)
 
 
 ## Architecture Overview
@@ -89,12 +89,12 @@ Terraform will display the execution plan. Type yes to confirm and proceed.
 
 5. **Verify the Deployment**
 
-![efs img-02](images/tf01.png)
-![efs img-03](images/ec01.png)
-![efs img-03](images/efs01.png)
-![efs img-03](images/efs02.png)
-![efs img-03](images/efs03.png)
-![efs img-03](images/efs04.png)
+![efs img-02](../images/tf01.png)
+![efs img-03](../images/ec01.png)
+![efs img-03](../images/efs01.png)
+![efs img-03](../images/efs02.png)
+![efs img-03](./images/efs03.png)
+![efs img-03](./images/efs04.png)
 
 
 EC2 Instance:
