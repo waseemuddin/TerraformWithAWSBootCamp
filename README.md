@@ -89,12 +89,12 @@ Terraform will display the execution plan. Type yes to confirm and proceed.
 
 5. **Verify the Deployment**
 
-![efs img-02](../images/tf01.png)
-![efs img-03](../images/ec01.png)
-![efs img-03](../images/efs01.png)
-![efs img-03](../images/efs02.png)
-![efs img-03](./images/efs03.png)
-![efs img-03](./images/efs04.png)
+![efs img-02](ec2_efs_lab07/images/tf01.png)
+![efs img-03](ec2_efs_lab07/images/ec01.png)
+![efs img-03](ec2_efs_lab07/images/efs01.png)
+![efs img-03](ec2_efs_lab07/images/efs02.png)
+![efs img-03](ec2_efs_lab07/images/efs03.png)
+![efs img-03](ec2_efs_lab07/images/efs04.png)
 
 
 EC2 Instance:
