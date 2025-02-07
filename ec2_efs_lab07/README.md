@@ -46,3 +46,9 @@ terraform-aws-efs-ec2/
 │   │   ├── main.tf
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
+
+4. ***StepbyStep***: Instructions
+
+1. **Clone the Repository**
+
+Clone this repository to your local machine:
