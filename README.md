@@ -1,4 +1,4 @@
-# Terraform AWS EFS + EC2 Setup
+# Create an EFS file system and mount it on an EC2 instance using the Terraform Modular Approch
 
 This repository contains Terraform modules to create an **Amazon EFS (Elastic File System)** and mount it on an **EC2 instance** in AWS. The infrastructure is designed using a **modular approach** for reusability and scalability.
 
