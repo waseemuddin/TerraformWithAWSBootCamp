@@ -5,7 +5,6 @@ This repository contains Terraform modules to create an **Amazon EFS (Elastic Fi
 ---
 ![efs img-01](images/efsarch.png)
 
-![Infrastructure Diagram](assets/Infra.gif)
 
 ## Architecture Overview
 
@@ -69,6 +68,10 @@ Run the following command to initialize Terraform and download the required prov
 
 ```bash
 terraform init
+terraform fmt
+terraform validate
+terraform plan
+
 ```
 
 3. **Review the Configuration**
@@ -85,6 +88,14 @@ terraform apply
 Terraform will display the execution plan. Type yes to confirm and proceed.
 
 5. **Verify the Deployment**
+
+![efs img-02](images/tf01.png)
+![efs img-03](images/ec01.png)
+![efs img-03](images/efs01.png)
+![efs img-03](images/efs02.png)
+![efs img-03](images/efs03.png)
+![efs img-03](images/efs04.png)
+
 
 EC2 Instance:
 SSH into the EC2 instance using its public IP:
