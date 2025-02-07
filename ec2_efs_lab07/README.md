@@ -24,7 +24,7 @@ The setup includes:
 
 4. **Git**: Install Git to clone this repository.
 
-```bash
+    ```bash
 terraform-aws-efs-ec2/
 ├── main.tf
 ├── variables.tf
@@ -47,8 +47,8 @@ terraform-aws-efs-ec2/
 │   │   ├── variables.tf
 │   │   ├── outputs.tf
 
-4. ***StepbyStep***: Instructions
+4. **StepbyStep***: Instructions
 
-1. **Clone the Repository**
+1. ****Clone the Repository****
 
 Clone this repository to your local machine:
