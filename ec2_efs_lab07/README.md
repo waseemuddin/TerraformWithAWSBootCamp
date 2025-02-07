@@ -23,6 +23,7 @@ The setup includes:
    aws configure
 
 4. **Git**: Install Git to clone this repository.
+
 ```bash
 terraform-aws-efs-ec2/
 ├── main.tf
