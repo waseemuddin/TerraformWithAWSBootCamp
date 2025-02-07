@@ -1,96 +1,119 @@
-# TerraformWithAWSBootCamp
-This is terraform example
+# Terraform AWS EFS + EC2 Setup
 
-### Terrafrom Commands
+This repository contains Terraform modules to create an **Amazon EFS (Elastic File System)** and mount it on an **EC2 instance** in AWS. The infrastructure is designed using a **modular approach** for reusability and scalability.
 
-// This commands shows the terrafrom version
+---
+![efs img-01](images/efsarch.png)
 
-```shell
-// This commands shows the terrafrom version
-$ Terraform -v 
 
-// This command will check the terraform code or shows error or success
-$ Terraform validate
+## Architecture Overview
 
-// This command displays the preview about what going to perform
-$ Terraform plan
+The setup includes:
+1. **VPC**: A virtual private cloud with public subnets.
+2. **Security Groups**: For EC2 (SSH access) and EFS (NFS access).
+3. **EFS**: A scalable, shared file system for centralized storage.
+4. **EC2 Instance**: An Amazon Linux 2 instance with EFS auto-mounted at boot.
 
-// Apply command will execute and create the infra on Cloud 
-$ Terraform apply
+---
 
-// Destroy command will destroy the infra everything you have created 
-$ Terraform destroy
+## Prerequisites
 
-//this command will delete the particular subnet
-$ Terraform destroy -target aws_subnet.mynetwork_subnet-2
- 
-$ terraform apply -auto-approve // this command with auto apply without confirming
-$  
-$ terraform state
-$ terraform state list
-$ terraform state show aws_subnet.mynetwork_subnet-1
-$ terraform state show aws_subnet.mynetwork_subnet-2
+1. **AWS Account**: Ensure you have an AWS account with the necessary permissions.
+2. **Terraform Installed**: Install Terraform from [here](https://www.terraform.io/downloads.html).
+3. **AWS CLI Installed**: Install and configure the AWS CLI with your credentials:
+   ```bash
+   aws configure
+
+4. **Git**: Install Git to clone this repository.
+
+```bash
+terraform-aws-efs-ec2/
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── modules/
+│   ├── vpc/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   ├── security_groups/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   ├── efs/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   ├── ec2/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
 
 ```
 
+***Step by Step***: Instructions
 
-```shell
-// How to define Terraform Validable  -  There are 3 ways to define terrafrom variables
-$ 1 - terraform apply 
-var.subnet_cidr_block
-  subnet cidr block - 1
+1. **Clone the Repository**
 
-  Enter a value: 192.168.1.0/25
+Clone this repository to your local machine:
 
-$ 2 - terraform apply -var "subnet_cidr_block=192.168.1.0/25"
+```bash
+git clone https://github.com/waseemuddin/TerraformWithAWSBootCamp.git
+cd TerraformWithAWSBootCamp
+git checkout feature/efs_lab01
+```
 
-(3rd way is to define in seperate file such as "terraform.tfvars" and use below line)
-$ 3 - subnet_cidr_block = "192.168.1.0/25" 
+2. **Initialize Terraform**
+Run the following command to initialize Terraform and download the required providers:
+
+```bash
+terraform init
+terraform fmt
+terraform validate
+terraform plan
 
 ```
 
+3. **Review the Configuration**
+The main.tf file in the root directory defines the infrastructure using the modules. Review the variables in variables.tf and update them if necessary.
 
-### Topics to be added in Terraform Repo
-```shell
-Introduction to Terraform and Cloud-Native Tools.
-Cloud-Native Tools vs. Terraform: Comparison of disadvantages.
-Understanding Terraform’s provider block.
-Tutorial on installing Terraform.
-Setting up an initial Terraform configuration with AWS provider.
-Creating AWS resources: VPC, Internet Gateway, and Subnets.
-Security Groups: Configuring inbound and outbound rules.
-Data Sources: Accessing resources created outside Terraform.
-Practical example with remote Terraform state.
-Creating EC2 instances with remote state files.
-Using data sources to access networking components in Terraform.
-Nested dependencies and deploying EC2 with data sources.
-Moving to Day 2: Introduction to advanced Terraform topics.
-Dependencies in Terraform: Implicit and explicit dependencies.
-Variables and tfvars files for modular configurations.
-Practical example: Organizing variables in tfvars.
-Advanced Terraform configurations: Using prevent_destroy and create_before_destroy.
-Managing state files and Terraform workspaces.
-Introduction to Terraform modules and modularization.
-Practical example: Creating reusable modules.
-Module outputs and passing data between modules.
-Using count and for_each in modules.
-Provider configurations in modules.
-Advanced usage of locals for DRY code.
-Environment-based configuration with workspaces.
-Dynamic blocks and their use cases.
-Handling sensitive data with terraform.tfvars.
-Working with remote backends in production environments.
-Terraform state locking and avoiding conflicts.
-Automated testing with Terraform: Overview of tools and methods.
- ontinuous Integration (CI) pipelines with Terraform.
-Integrating Terraform with GitHub Actions.
-Error handling and debugging in complex Terraform scripts.
-Best practices for structuring Terraform projects.
-Importing existing infrastructure into Terraform.
-Terraform’s lifecycle rules (create_before_destroy, prevent_destroy).
- Handling multi-cloud deployments with Terraform.
-Overview of HashiCorp’s Terraform Cloud.
-Managing team access and roles in Terraform Cloud.
-End-to-end workflow example: Multi-environment setup.
-Wrapping up: Key takeaways and advanced tips for Terraform users.
+
+4. **Apply the Terraform Configuration**
+Deploy the infrastructure by running:
+
+```bash
+terraform apply
 ```
+
+Terraform will display the execution plan. Type yes to confirm and proceed.
+
+5. **Verify the Deployment**
+
+![efs img-02](images/tf01.png)
+![efs img-03](images/ec01.png)
+![efs img-03](images/efs01.png)
+![efs img-03](images/efs02.png)
+![efs img-03](images/efs03.png)
+![efs img-03](images/efs04.png)
+
+
+EC2 Instance:
+SSH into the EC2 instance using its public IP:
+
+```bash
+ssh ec2-user@<EC2_PUBLIC_IP>
+df -h /mnt/efs
+echo "Hello, EFS!" > /mnt/efs/test.txt
+cat /mnt/efs/test.txt
+EFS File System:
+```
+
+Go to the AWS Management Console > EFS and verify the file system is created and in the available state.
+
+6. **Destroy the Infrastructure**
+To clean up and avoid unnecessary charges, destroy the infrastructure:
+
+```bash
+terraform destroy
+```
+
