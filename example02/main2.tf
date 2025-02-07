@@ -159,7 +159,7 @@ output "ec2_public_ip" {
 }
 
 resource "aws_key_pair" "ssh-key" {
-    key_name = "server-key"
+    key_name = "ey"
     public_key = "${file(var.public_key_location)}"
   }
 
