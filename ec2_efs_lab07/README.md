@@ -60,3 +60,45 @@ git clone https://github.com/waseemuddin/TerraformWithAWSBootCamp.git
 cd TerraformWithAWSBootCamp
 git checkout feature/efs_lab01
 ```
+
+2. **Initialize Terraform**
+Run the following command to initialize Terraform and download the required providers:
+
+```bash
+terraform init
+```
+
+3. **Review the Configuration**
+The main.tf file in the root directory defines the infrastructure using the modules. Review the variables in variables.tf and update them if necessary.
+
+
+4. **Apply the Terraform Configuration**
+Deploy the infrastructure by running:
+
+```bash
+terraform apply
+```
+
+Terraform will display the execution plan. Type yes to confirm and proceed.
+
+5. **Verify the Deployment**
+
+EC2 Instance:
+SSH into the EC2 instance using its public IP:
+
+```bash
+ssh ec2-user@<EC2_PUBLIC_IP>
+df -h /mnt/efs
+echo "Hello, EFS!" > /mnt/efs/test.txt
+cat /mnt/efs/test.txt
+EFS File System:
+```
+
+Go to the AWS Management Console > EFS and verify the file system is created and in the available state.
+
+6. **Destroy the Infrastructure**
+To clean up and avoid unnecessary charges, destroy the infrastructure:
+
+```bash
+terraform destroy
+```
