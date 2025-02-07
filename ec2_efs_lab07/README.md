@@ -21,3 +21,28 @@ The setup includes:
 3. **AWS CLI Installed**: Install and configure the AWS CLI with your credentials:
    ```bash
    aws configure
+
+
+4. **Git**: Install Git to clone this repository.
+```bash
+terraform-aws-efs-ec2/
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── modules/
+│   ├── vpc/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   ├── security_groups/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   ├── efs/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   ├── ec2/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
