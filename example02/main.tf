@@ -128,7 +128,7 @@ resource "aws_instance" "myapp-server" {
 }
 
 resource "aws_key_pair" "ssh-key" {
-        key_name = "server-key"
+        key_name = "222y"
         public_key = "${file(var.public_key_location)}"
 }
 
