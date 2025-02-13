@@ -1,0 +1,1 @@
+# No variables needed for the organization module
