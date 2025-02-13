@@ -1,12 +1,12 @@
 # Local .terraform directories
 **/.terraform/*
-fun_lab02/*
-lab05/*
-module_lab02/*
-module_lab_01/*
-ec2_efs_lab07/*
-ou-lab/*
-ou-lab/aws-organizations-with-terraform/*
+**/fun_lab02/*
+**/lab05/*
+**/module_lab02/*
+**/module_lab_01/*
+**/ec2_efs_lab07/*
+**/ou-lab/*
+**/ou-lab/aws-organizations-with-terraform/*
 # .tfstate files
 *.tfstate
 *.tfstate.*
@@ -44,4 +44,3 @@ terraform.rc
 
 #Ignore crash logs
 crash.log
-
