@@ -53,4 +53,4 @@ terraform apply ## or --auto-apply
 ---
 ```
 
-![efs img-01](ou-lab03/images/aws_ou.png)
+![efs img-01](/images/aws_ou.png)
