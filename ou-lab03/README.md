@@ -49,3 +49,6 @@ terraform validate
 terraform plan
 
 terraform apply ## or --auto-apply
+
+---
+![efs img-01](ou-lab03/images/aws_ou.png)
