@@ -1,9 +1,12 @@
 # Local .terraform directories
 **/.terraform/*
-fun_lab02/
-lab05/
-module_lab02/
-module_lab_01/
+fun_lab02/*
+lab05/*
+module_lab02/*
+module_lab_01/*
+ec2_efs_lab07/*
+ou-lab/*
+ou-lab/aws-organizations-with-terraform/*
 # .tfstate files
 *.tfstate
 *.tfstate.*
@@ -13,8 +16,8 @@ crash.log
 crash.*.log
 
 # Exclude all .tfvars files, which are likely to contain sensitive data, such as
-# password, private keys, and other secrets. These should not be part of version 
-# control as they are data points which are potentially sensitive and subject 
+# password, private keys, and other secrets. These should not be part of version
+# control as they are data points which are potentially sensitive and subject
 # to change depending on the environment.
 #*.tfvars
 *.tfvars.json
@@ -39,6 +42,6 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-
 #Ignore crash logs
 crash.log
+

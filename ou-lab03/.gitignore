@@ -6,6 +6,7 @@ module_lab02/*
 module_lab_01/*
 ec2_efs_lab07/*
 ou-lab/*
+ou-lab/aws-organizations-with-terraform/*
 # .tfstate files
 *.tfstate
 *.tfstate.*
