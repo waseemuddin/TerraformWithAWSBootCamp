@@ -20,9 +20,7 @@ variable "cidr_blocks" {
   }))
   
 }
- 
-
-# variable "subnet_cidr_block" {
+ # variable "subnet_cidr_block" {
 #   description = "subnet cidr block"
 #   //default = "10.0.10.0/24"
 #   type = list(sting)
@@ -51,7 +49,7 @@ resource "aws_subnet" "mycustom-subnet-1" {
 
   tags = {
     Name: var.cidr_blocks[1].name
-  }
+  }  
 }
 
 # data "aws_vpc" "existing_vpc2" {
