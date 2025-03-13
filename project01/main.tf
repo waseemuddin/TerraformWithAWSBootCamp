@@ -155,10 +155,8 @@ output "ec2_public_ip" {
 }
 
 resource "aws_key_pair" "ssh-key" {
-  key_name = "ans-key2"
-  //public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCK3K1kgkkhpBW4iVqkqQ1a/gLEq7So3ycYS3A1gSL/hzAu3a9WLak1B47hZIgSYcQOowHUaywsn0+49S5b1rXW6eau6333SBrfVKDYtVYbg+xVt/sAg2MM6digY9SKwC70QUIok5v8EycBFa5N3ej+QuZsbAfXJfIVEKLdPeXgzokhXbOL4SDdbqjlI196M2WbtQ19DaP0UG2Rq9h88vg5VdF8m7tAb/w5Mdnv+SyMrnW28MpL8WxoTof+2riHNctMiTFSgIcqkGW/VjCId26lrccLWlA8bpldlF082UXqWuWiTALI0BJht/d9l8TOpPve21vzxqi5N8IzYsr6aXsLRnzHYZ+Tydnxk+5pRUGJuhZTqFPzIm9hRs/BFR5APKq+Hu0661QmurM1TvRcgB3SBjPbRtvhNQJC5anh+RdolBrdHli1k87Rc/0U/r9U6tDJHr0GOD/iDShFzk2L9DzItnDGMpNndV1Zj753mu9KdeXpTqz58vhB2kTeCWL+q60= user@user"
-  //public_key = var.mypub lic-key
-  public_key = file(var.publlic_key_location)
+    key_name = "your key name"
+    public_key = file(var.publlic_key_location)
 
 }
 
